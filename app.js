@@ -254,17 +254,17 @@ async function initMap() {
 
   });
 
-  navigator.geolocation.getCurrentPosition(function(position) {
-      var initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-      map.setCenter(initialLocation);
-      var userMarker = new google.maps.Marker({
-      position: initialLocation,
-      map: map,
-      icon: icon2
-      });
-        }, function() {
+ // navigator.geolocation.getCurrentPosition(function(position) {
+ //     var initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+ //     map.setCenter(initialLocation);
+ //     var userMarker = new google.maps.Marker({
+ //     position: initialLocation,
+ //     map: map,
+ //     icon: icon2
+ //     });
+ //       }, function() {
           //handle no geolocation
-        });
+ //       });
 
 
 
