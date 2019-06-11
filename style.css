@@ -103,6 +103,7 @@ li{
   display: flex;
   justify-content: center;
   overflow-y: scroll;
+ height: 100vh;
 }
 .page{
   padding: 50px;
