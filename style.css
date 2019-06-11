@@ -20,6 +20,7 @@ html, body {
   padding: 0;
   font-family: 'GalanoGrotesque-Bold';
   text-transform: uppercase;
+  overflow: hidden;
 }
 
 a{
@@ -101,6 +102,7 @@ li{
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
 }
 .page{
   padding: 50px;
