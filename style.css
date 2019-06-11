@@ -1,0 +1,179 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+
+
+
+
+ #infowindow-content .title {
+        font-weight: bold;
+      }
+
+
+#map{
+  height: 600px;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'GalanoGrotesque-Bold';
+  text-transform: uppercase;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+a:link{
+  text-decoration: none;
+  color: #000;
+}
+
+a:visited{
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #e9ffe8;
+text-shadow:
+1px 0px 1px #0efd1e,
+0px 1px 1px #0efd1e,
+-1px 0px 1px #0efd1e,
+0px -1px 1px #0efd1e,
+0px 0px 5px #233c7d,
+0px 0px 10px #4d90fe,
+0px 0px 10px #04f7ff,
+0px 0px 10px #04f7ff;
+}
+
+a:active{
+  text-decoration: none;
+  color: #000;
+}
+
+::-moz-selection {  color: #e9ffe8;
+text-shadow:
+1px 0px 1px #0efd1e,
+0px 1px 1px #0efd1e,
+-1px 0px 1px #0efd1e,
+0px -1px 1px #0efd1e,
+0px 0px 5px #233c7d,
+0px 0px 10px #4d90fe,
+0px 0px 10px #04f7ff,
+0px 0px 10px #04f7ff; }
+::selection {   color: #e9ffe8;
+text-shadow:
+1px 0px 1px #0efd1e,
+0px 1px 1px #0efd1e,
+-1px 0px 1px #0efd1e,
+0px -1px 1px #0efd1e,
+0px 0px 5px #233c7d,
+0px 0px 10px #4d90fe,
+0px 0px 10px #04f7ff,
+0px 0px 10px #04f7ff; }
+
+li{
+  list-style: none;
+  padding-left: 0;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+#header{
+  padding: 1em;
+    width: 100%;
+    min-height: 4em;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+}
+
+#header ol{
+  margin: 0;
+  padding: 0;
+}
+
+#primary{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.page{
+  padding: 50px;
+  width: 100vw;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+.block{
+  padding:0 0 50px 0;
+}
+
+
+@media all and (max-width : 799px) {
+  .page{padding: 20px;}
+
+  .block{
+    padding:0 0 30px 0;
+  }
+}
+
+.img-container{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.img-container-2{
+max-width: 500px;
+}
+
+.img-container img{
+width: 100%;
+}
+
+.pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }

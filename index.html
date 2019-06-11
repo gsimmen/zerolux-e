@@ -1,0 +1,65 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link http://atelierflottant.ch
+ *
+ */
+
+?><!DOCTYPE html>
+
+<html lang="fr_FR" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lightmap</title>
+    <link rel="stylesheet" href="myfontswebfontskit.css" type="text/css" media="screen, projection" />
+    <link href="style.css" rel="stylesheet" media="all" type="text/css">
+  </head>
+
+  <body>
+    <div id="header">
+      <nav>
+        <ol>
+          <li>Étapes :</li>
+          <li><a href="#apprend">1. Apprends</a></li>
+          <li><a href="#assemble">2. Assemble</a></li>
+          <li><a href="#contribue">3. Contribue</a></li>
+          <li><a href="#mobilise">4. Mobilise</a></li>
+        </ol>
+      </nav>
+    </div><!--header-->
+    <div id = "primary">
+      <div class ="page">
+      <div class="block" id="apprends">
+        <h3 class="title">1. Apprends</h3>
+        <p>L’abus de l’éclairage, avec du matériel totalement inadapté, est la première cause de pollution lumineuse, c’est-à-dire d’envahissement du ciel nocturne par des sources de lumière parasites.</p>
+        <p>La pollution lumineuse est une catastrophe pour l’astronomie, certes, mais aussi pour l’équilibre de la vie sur terre en général. Les faisceaux de discothèques, stupides et inutiles, les fameuses boules, honte du parc d’éclairage français (elles renvoient plus de 60 % de lumière vers le ciel !) sont des exemples flagrants de pollution lumineuse.</p>
+      </div>
+      <div class="block" id="assemble">
+        <h3 class="title">2. Assemble</h3>
+        <div class="img-container">
+          <div class="img-container-2">
+        <img src="spambox-1.png" title="spambox" />
+        <div class="button"><a href=""></a></div>
+      </div>
+      </div>
+      </div>
+      <div class="block" id="contribue">
+        <h3 class="title">3. Contribue</h3>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    </div>
+  </div><!--page-->
+  </div><!--primary-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://assets.shiftr.io/js/mqtt-2.9.0.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRErmO6On3wu1-38p3uoPl-0F2w_qzgeE&libraries=visualization,places&callback=initMap">
+  </script>
+  <script type="text/javascript" src="js.js"></script>
+  </body>
+</html>
