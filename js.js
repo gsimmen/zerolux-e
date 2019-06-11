@@ -17,6 +17,11 @@ $("a[href*='#']:not([href='#'])").click(function() {
     }
 });
 });
+    
+$(window).on('load resize' , function(e){
+    var headerHeight = $('#header').height();
+    $('#primary').animate({"height":"calc(100vh -" + headerHeight + ")"},400)
+      });
 
 
 //
