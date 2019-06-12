@@ -58,15 +58,16 @@ border-bottom: 2px solid black;
 }
 
 .button{
-display: block;
+display: inline-block;
 }
 
-.button a, .button a:link, .button a:visited, .button a:focus{
-display: block;
+.button a, .button a:link, .button a:visited, .button a:active, .button a:focus{
+ display: block;
+ padding: 4px 4px 10px 4px;
  border: 2px solid #000;
 }
 
-.button a:hover, .button a:active{
+.button a:hover{
  background-color: #000;
  color: #fff;
 }
