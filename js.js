@@ -19,9 +19,8 @@ $("a[href*='#']:not([href='#'])").click(function() {
 });
 });
 
-
-var headerHeight = $('#header').height();
 $(window).on('load resize' , function(){
+var headerHeight = $('#header').height();
     $('#primary').animate({"height" : "calc(100vh - " + headerHeight + ")" - 10 }, 400);
       });
 
