@@ -52,7 +52,7 @@ a:visited{
   color: #000;
 }
 
-a[href*="#"]:focus, aa[href*="#"].focused{
+a[href*="#"]:focus, a[href*="#"].focused{
 border-bottom: 2px solid black;
  color: #000; 
 }
