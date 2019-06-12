@@ -12,8 +12,7 @@ $("a[href*='#']:not([href='#'])").click(function() {
         var anchor = $(this.hash);
         anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
         if ( anchor.length ) {
-            //$("html, body").css( { scrollTop: anchor.offset().top - 30 });
-            $("#primary").animate( { scrollTop: anchor.offset().top - 30 },400);
+            $("html, body").animate( { scrollTop: anchor.offset().top - 30 }, 400);
         }
     }
 });
