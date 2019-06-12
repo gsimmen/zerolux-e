@@ -37,6 +37,16 @@ a:hover{
  color: #000; 
 }
 
+a:active{
+ text-decoration: none;
+ color: #000; 
+}
+
+a[href*="#"]:active{
+ border-bottom: 2px solid black;
+ color: #000; 
+}
+
 a:visited{
   text-decoration: none;
   color: #000;
