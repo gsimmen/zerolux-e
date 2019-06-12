@@ -13,7 +13,7 @@ $("a[href*='#']:not([href='#'])").click(function() {
         var headerHeight = $('#header').height();
         anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
         if ( anchor.length ) {
-            $("html, body").animate( { scrollTop: anchor.offset().top - 30 }, 400);
+            $("html, body").animate( { scrollTop: anchor.offset().top - headerHeight }, 400);
         }
     }
 });
