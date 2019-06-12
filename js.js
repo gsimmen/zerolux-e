@@ -10,6 +10,7 @@ $("a[href*='#']:not([href='#'])").click(function() {
         && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
     ) {
         var anchor = $(this.hash);
+        var headerHeight = $('#header').height();
         anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
         if ( anchor.length ) {
             $("html, body").animate( { scrollTop: anchor.offset().top - 30 }, 400);
