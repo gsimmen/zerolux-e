@@ -57,6 +57,21 @@ border-bottom: 2px solid black;
  color: #000; 
 }
 
+.button{
+display: block;
+}
+
+.button a, .button a:link, .button a:visited, .button a:focus{
+display: block;
+ border: 2px solid #000;
+}
+
+.button a:hover, .button a:active{
+ background-color: #000;
+ color: #fff;
+}
+
+
 li{
   list-style: none;
   padding-left: 0;
