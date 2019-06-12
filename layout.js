@@ -23,6 +23,12 @@ $(window).on('load resize' , function(){
 var headerHeight = $('#header').outerHeight();
    $('#primary').animate({"padding-top" : headerHeight }, 400);
       });
+    
+$('a[href*='#']').on('click' , function(){
+  var clicked = this ;
+  this.css({'border-bottom': '2px solid #000'});
+    $('a[href*='#']').not(clicked).css({'border-bottom': '0'});
+  });    
 
 
 //
