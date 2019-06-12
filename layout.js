@@ -29,8 +29,8 @@ var headerHeight = $('#header').outerHeight();
 //créer un effet de focus sous le lien du menu    
 $('a[href*="#"]').on('click' , function(){
   var clicked = $(this) ;
-  $(this).css({'border-bottom': '2px solid #000'});
-    $('a[href*="#"]').not(clicked).css({'border-bottom': '0'});
+  $(this).addClass('focused');
+    $('a[href*="#"]').not(clicked).removeClass('focused');
   });    
 
 
