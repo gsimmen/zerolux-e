@@ -13,17 +13,16 @@ $("a[href*='#']:not([href='#'])").click(function() {
         var headerHeight = $('#header').outerHeight();
         anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
         if ( anchor.length ) {
-            $("html, body").animate( { scrollTop: anchor.offset().top }, 400);
-            $(".page").append(headerHeight);
+            $("html, body").animate( { scrollTop: anchor.offset().top + headerHeight }, 400);
         }
     }
 });
 });
 
-$(window).on('load resize' , function(){
-var headerHeight = $('#header').height();
-    $('#primary').animate({"height" : "calc(100vh - " + headerHeight + ")" - 10 }, 400);
-      });
+//$(window).on('load resize' , function(){
+//var headerHeight = $('#header').height();
+    //$('#primary').animate({"height" : "calc(100vh - " + headerHeight + ")" - 10 }, 400);
+      //});
 
 
 //
