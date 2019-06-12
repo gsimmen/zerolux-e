@@ -42,6 +42,11 @@ a:visited{
   color: #000;
 }
 
+a[href*="#"]:focus{
+border-bottom: 2px solid black;
+ color: #000; 
+}
+
 li{
   list-style: none;
   padding-left: 0;
