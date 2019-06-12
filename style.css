@@ -38,45 +38,7 @@ a:visited{
   color: #000;
 }
 
-a:hover{
-  text-decoration: none;
-  color: #e9ffe8;
-text-shadow:
-1px 0px 1px #0efd1e,
-0px 1px 1px #0efd1e,
--1px 0px 1px #0efd1e,
-0px -1px 1px #0efd1e,
-0px 0px 5px #233c7d,
-0px 0px 10px #4d90fe,
-0px 0px 10px #04f7ff,
-0px 0px 10px #04f7ff;
-}
 
-a:active{
-  text-decoration: none;
-  color: #000;
-}
-
-::-moz-selection {  color: #e9ffe8;
-text-shadow:
-1px 0px 1px #0efd1e,
-0px 1px 1px #0efd1e,
--1px 0px 1px #0efd1e,
-0px -1px 1px #0efd1e,
-0px 0px 5px #233c7d,
-0px 0px 10px #4d90fe,
-0px 0px 10px #04f7ff,
-0px 0px 10px #04f7ff; }
-::selection {   color: #e9ffe8;
-text-shadow:
-1px 0px 1px #0efd1e,
-0px 1px 1px #0efd1e,
--1px 0px 1px #0efd1e,
-0px -1px 1px #0efd1e,
-0px 0px 5px #233c7d,
-0px 0px 10px #4d90fe,
-0px 0px 10px #04f7ff,
-0px 0px 10px #04f7ff; }
 
 li{
   list-style: none;
