@@ -1,70 +1,125 @@
 <!DOCTYPE html>
 
 <html lang="fr_FR" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>zero lux(e)</title>
-    <link rel="stylesheet" href="myfontswebfontskit.css" type="text/css" media="screen, projection" />
-    <link href="style.css" rel="stylesheet" media="all" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://assets.shiftr.io/js/mqtt-2.9.0.js"></script>
-  </head>
 
-  <body>
-    <div id="header">
-      <nav>
-        <ol>
-          <li>Étapes :</li>
-          <li><a href="#apprends">1. Apprends</a></li>
-          <li><a href="#assemble">2. Assemble</a></li>
-          <li><a href="#contribue">3. Contribue</a></li>
-          <li><a href="#mobilise">4. Mobilise</a></li>
-        </ol>
-      </nav>
-    </div><!--header-->
-    <div id = "primary">
-      <div class ="page">
-      <div class="block" id="apprends">
-        <h3 class="title">1. Apprends</h3>
+<head>
+  <meta charset="utf-8" />
+  <title>Lightmap</title>
+  <link rel="stylesheet" href="myfontswebfontskit.css" type="text/css" media="screen, projection" />
+  <link href="style.css" rel="stylesheet" media="all" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://assets.shiftr.io/js/mqtt-2.9.0.js"></script>
+</head>
+
+<body>
+  <div id="header">
+    <nav>
+      <span class="pageTitle">Zero LUX(E)</span>
+
+      <ul>
+        <li>Steps :</li>
+        <li><a href="#inform-yourself" id="linkinform-yourself">1. Inform yourself</a></li>
+        <li><a href="#geoluxmeter" id="linkgeoluxmeter">2.a Geoluxmeter</a></li>
+        <li><a href="#spam-box" id="linkspam-box">2.b Spam-box</a></li>
+        <li><a href="#contribute" id="linkcontribute">4. Contribute</a></li>
+      </ul>
+      <div style="clear: both;"></div>
+    </nav>
+  </div>
+  <!--header-->
+    <div class="page">
+      <div id="headerPlaceholder">
+        <nav>
+          <span class="pageTitle">Zero LUX(E)</span>
+
+          <ul>
+            <li>Steps :</li>
+            <li><a >1. Inform yourself</a></li>
+            <li><a >2.a Geoluxmeter</a></li>
+            <li><a >2.b Spam-box</a></li>
+            <li><a >4. Contribute</a></li>
+          </ul>
+          </ul>
+          <div style="clear: both;"></div>
+        </nav>
+      </div><!-- #headerPlaceholder -->
+
+      <div class="block" id="inform-yourself">
+        <h1 class="title">1. Inform yourself</h1>
+        <div style ="padding-top: 20px;">
+          <p>L’abus de l’éclairage, avec du matériel totalement inadapté, est la première cause de pollution lumineuse, c’est-à-dire d’envahissement du ciel nocturne par des sources de lumière parasites.</p>
+          <p>La pollution lumineuse est une catastrophe pour l’astronomie, certes, mais aussi pour l’équilibre de la vie sur terre en général. Les faisceaux de discothèques, stupides et inutiles, les fameuses boules, honte du parc d’éclairage français (elles
+            renvoient plus de 60 % de lumière vers le ciel !) sont des exemples flagrants de pollution lumineuse.</p>
+          </div>
+      </div><!-- .block -->
+
+      <div class="block" id="geoluxmeter">
+        <h1 class="title">2.a Geoluxmeter</h1>
+        <div class="content-wrapper">
+          <div class="sub-block-50">
+          <div class="parallaxContainer">
+            <img src="source/paralax001_1.png" data-speed="0">
+            <img src="source/paralax001_2.png" data-speed="1">
+            <img src="source/paralax001_3.png" data-speed="3">
+            <img src="source/paralax001_4.png" data-speed="2">
+          </div>
+          <div style="clear:both;"></div>
+        <div style="text-align: center; margin-top:50px; z-index:999;">
+        <div class="button"><a href="assemblage.zip">Download instructions</a></div>
+      </div>
+      </div><!--.sub-block-->
+        <div class="sub-block-50">
+          <p>L’abus de l’éclairage, avec du matériel totalement inadapté, est la première cause de pollution lumineuse, c’est-à-dire d’envahissement du ciel nocturne par des sources de lumière parasites.</p>
+          <p>La pollution lumineuse est une catastrophe pour l’astronomie, certes, mais aussi pour l’équilibre de la vie sur terre en général. Les faisceaux de discothèques, stupides et inutiles, les fameuses boules, honte du parc d’éclairage français (elles
+            renvoient plus de 60 % de lumière vers le ciel !) sont des exemples flagrants de pollution lumineuse.</p>
+          </div><!--.sub-block-->
+        </div><!--.content-wrapper-->
+          </div><!--.block-->
+
+       <div class="block" id="spam-box">
+         <h1 class="title">2.b Spam-box</h1>
+         <div class="content-wrapper">
+      <div class="sub-block-50">
         <p>L’abus de l’éclairage, avec du matériel totalement inadapté, est la première cause de pollution lumineuse, c’est-à-dire d’envahissement du ciel nocturne par des sources de lumière parasites.</p>
-        <p>La pollution lumineuse est une catastrophe pour l’astronomie, certes, mais aussi pour l’équilibre de la vie sur terre en général. Les faisceaux de discothèques, stupides et inutiles, les fameuses boules, honte du parc d’éclairage français (elles renvoient plus de 60 % de lumière vers le ciel !) sont des exemples flagrants de pollution lumineuse.</p>
+        <p>La pollution lumineuse est une catastrophe pour l’astronomie, certes, mais aussi pour l’équilibre de la vie sur terre en général. Les faisceaux de discothèques, stupides et inutiles, les fameuses boules, honte du parc d’éclairage français (elles
+          renvoient plus de 60 % de lumière vers le ciel !) sont des exemples flagrants de pollution lumineuse.</p>
+    </div><!--.sub-block-->
+      <div class="sub-block-50">
+      <div class="parallaxContainer">
+        <img src="source/paralax001_1.png" data-speed="0">
+        <img src="source/paralax001_2.png" data-speed="1">
+        <img src="source/paralax001_3.png" data-speed="3">
+        <img src="source/paralax001_4.png" data-speed="2">
       </div>
-      <div class="block" id="assemble">
-        <h3 class="title">2. Assemble</h3>
-        <div class="img-container">
-          <div class="img-container-2">
-        <img src="spambox-1.png" title="spambox" />
-            <div style="text-align: center;">
-        <div class="button"><a href="assemblage.zip">Télécharge les plans</a></div>
-            </div>
-      </div>
-      </div>
-      </div>
-      <div class="block" id="contribue">
-        <h3 class="title">3. Contribue</h3>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-    </div>
-        <div class="block" id="mobilise">
-        <h3 class="title">4. Mobilise</h3>
-        <div class="img-container">
-          <div class="img-container-2">
-        <img src="petition.jpg" title="Pétition" />
-            <div style="text-align: center;">
-        <div class="button"><a href="petition.jpg" download>Télécharge la pétition</a></div>
-            </div>
-      </div>
-      </div>
-      </div>
-  </div><!--page-->
-  </div><!--primary-->
+      <div style="clear:both;"></div>
+    <div style="text-align: center; margin-top:50px; z-index:999;">
+    <div class="button"><a href="assemblage.zip">Download instructions</a></div>
+  </div>
+  </div><!--.sub-block-->
+</div><!--.content-wrapper-->
+  </div><!--.block-->
+
+      <div class="block classChanger" data-classname="inverted" id="contribute">
+        <h1 class="title">3. Contribute</h1>
+        <div class="content-wrapper">
+         <div class="sub-block-70">
+          <div id="map"></div>
+        </div><!--.sub-block-->
+        <div class="sub-block-30">
+          <p>L’abus de l’éclairage, avec du matériel totalement inadapté, est la première cause de pollution lumineuse, c’est-à-dire d’envahissement du ciel nocturne par des sources de lumière parasites.</p>
+
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+          </div><!--.sub-block-->
+        </div><!--.content-wrapper-->
+        <div style="clear:both"></div>
+      </div><!--.block-->
+    </div><!--page-->
+    <div id="photoframe"></div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="layout.js"></script>
   <script type="text/javascript" src="app.js"></script>
-  <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRErmO6On3wu1-38p3uoPl-0F2w_qzgeE&libraries=visualization,places&callback=initMap">
-  </script>
-   
-  </body>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRErmO6On3wu1-38p3uoPl-0F2w_qzgeE&libraries=visualization,places&callback=initMap"></script>
+  <script src="parallaxScript.js"></script>
+  <script src="layout.js"></script>
+</body>
+
 </html>

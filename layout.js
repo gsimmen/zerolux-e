@@ -1,39 +1,63 @@
 jQuery(document).ready(function($) {
 
-$(function() {
-/**
-* Smooth scrolling to page anchor on click
-**/
-$("a[href*='#']:not([href='#'])").click(function() {
-    if (
-        location.hostname == this.hostname
-        && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
-    ) {
-        var anchor = $(this.hash);
-        var headerHeight = $('#header').outerHeight();
-        anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
-        if ( anchor.length ) {
-            $("html, body").animate( { scrollTop: anchor.offset().top - headerHeight -30 }, 400);
-        }
-    }
-});
-});
 
-    //ajuste le padding du contenu à la hauteur du header
-$(window).on('load resize' , function(){
+
+// $(window).on('load resize', function(e) {
+//   var headerHeight = $('#header').height();
+//   $('#primary').animate({
+//     "color": "#e8a010"
+//   }, 400);
+// });
+
+$(window).on('load resize',function(){
 var headerHeight = $('#header').outerHeight();
-   $('#primary').animate({"padding-top" : headerHeight }, 400);
-      });
-    
-    
-//créer un effet de focus sous le lien du menu    
-$('a[href*="#"]').on('click' , function(){
-  var clicked = $(this) ;
-  $(this).addClass('focused');
-    $('a[href*="#"]').not(clicked).removeClass('focused');
-  });    
+var windowHeight = $(window).height();
+var blockHeight =  windowHeight - headerHeight ;
+var adjustMap = windowHeight - headerHeight - 147 ;
+  $('.block').css({ 'min-height' : blockHeight + 'px'});
+  $('#map').css({ 'max-height' : adjustMap + 'px'});
+});
 
 
-//
-//
+// for(i = 1 ; i < 99 ; i++) {
+//   var imgUrl = "'places/place-" + i + ".jpg'" ;
+//  $("[title='place-" + i + "']").on('click', function(e){
+//    var depth = $(this).index() ;
+//    var imgUrl = "'places/place-" + depth + ".jpg'" ;
+//   $('.photoframe').css('background-image' , 'url(' + imgUrl + ')' );
+//   // $('.photoframe').append(depth);
+// });
+// }
+
+$('#photoframe').on('click', function(){
+if( $('#photoframe').css('opacity') == '1'){
+  $('#photoframe , #photoframe img').animate({'opacity':'0'},400);
+  $('#photoframe')
+  .delay(400)
+  .queue(function (next) {
+    $(this).css({'z-index':'-999'});
+    next();
+  });
+  $('#photoframe').empty();
+}
+
+});
+
 });//jquery function
+
+
+//$(window).on('load' , function render(){
+function render(){
+  //console.log(document.documentElement.scrollTop);
+  checkUnderline();
+  checkMagScroll(lastScroll);
+  checkParallax();
+  changeClass();
+  requestAnimationFrame(render);
+};
+
+render();
+//});
+
+//
+//
