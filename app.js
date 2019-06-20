@@ -13,7 +13,7 @@ var AT_TABLE_NAME = "Table%201";
 // document.getElementsByName("Thing")[0].addEventListener('change', doThing);
 
 
-
+  var urlParams = new URLSearchParams(window.location.search);
 
 
 
@@ -23,23 +23,20 @@ var AT_TABLE_NAME = "Table%201";
 
 
 var map, heatmap, contentString;
-var icon2 = {
 
-  url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-
-};
 
 
 
 async function initMap() {
-  var urlParams = new URLSearchParams(window.location.search);
-  var lng = parseFloat(urlParams.get('lng')) || 6.888697;
-
-  var lat = parseFloat(urlParams.get('lat')) || 46.989402;
+  var lng = +(urlParams.get('lng') || "6.888697").replace(',','.');
+  var lat = +(urlParams.get('lat') || "46.989402").replace(',','.');
+  var ecal = {
+    lat: 46.53705,
+    lng: 6.58809
+  }
   var peseux = {
     lat: lat,
     lng: lng
-
   };
 
 console.log("lat "+lat);
@@ -194,6 +191,11 @@ console.log("long"+lng);
 
   });
 jQuery(document).ready(function($) {
+  var anchor = urlParams.get('anchor');
+  var contribute = document.querySelector('#' + anchor);
+  setTimeout(function () {
+    contribute.scrollIntoView(true);
+  }, 1000);
   // navigator.geolocation.getCurrentPosition(function(position) {
   //     var initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
   //     map.setCenter(initialLocation);
@@ -210,13 +212,14 @@ jQuery(document).ready(function($) {
   scaledSize: new google.maps.Size(27, 42)
 }
 
+var markermail = new google.maps.Marker({
 
-// var markerbox = new google.maps.Marker({
-//    position: { lat: 46.989402,lng: 6.888697},
-//    map: map,
-//    title: "marker" ,
-//    icon: icon1
-//  });
+  map: map,
+    icon: icon1,
+position: ecal
+
+});
+markermail.setMap(map);
 
 // Multiple Markers
    var markers = [
@@ -335,6 +338,10 @@ jQuery(document).ready(function($) {
         title: place.name,
         position: place.geometry.location
       }));
+
+
+
+
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
