@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="fr_FR" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lightmap</title>
+  <link rel="stylesheet" href="myfontswebfontskit.css" type="text/css" media="screen, projection" />
+  <link href="style.css" rel="stylesheet" media="all" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://assets.shiftr.io/js/mqtt-2.9.0.js"></script>
+</head>
+
+<body>
+  <div id="header">
+    <nav>
+      <span class="pageTitle"><a href="" >Zero LUX(E)</a></span>
+
+      <ul>
+
+        <li><a href="#inform-yourself" id="linkinform-yourself">1. Inform yourself</a></li>
+        <li><a href="#geoluxmeter" id="linkgeoluxmeter">2.a Geoluxmeter</a></li>
+        <li><a href="#spam-box" id="linkspam-box">2.b Street lighting notifier</a></li>
+        <li><a href="#contribute" id="linkcontribute">3. Contribute</a></li>
+      </ul>
+      <div style="clear: both;"></div>
+    </nav>
+  </div>
+
+  <!--header-->
+  <div class="page">
+    <div id="splash" class="block">
+      <div id="centeredSplash">
+        <span id="mainTitle">ZERO LUX(E)</span>
+
+      </div>
+      <div id="bottomScrollText">
+        <h1>scroll down</h1>
+      </div>
+    </div>
+    <div class="block" id="inform-yourself">
+      <h1 class="title">1. Inform yourself</h1>
+      <div class="content-wrapper">
+        <div class="sub-block-30 pushCenter animated left selfClassChanger" data-classname="come-in">
+          <p>The abuse of street lighting, with totally inadequate equipment, is the main cause of light pollution. Light pollution is a disaster for astronomy, of course, but also for the balance of life on earth in general.
+            It disrupts the lives of thousands of species, it disrupts insects and the entire food chain. </p>
+        </div>
+        <div class="sub-block-70">
+          <div class="rotationContainer">
+            <img src="source/lamp1.png" data-rotate="0">
+            <img src="source/lamp2.png" data-rotate="1">
+            <img src="source/lamp3.png" data-rotate="-1.5">
+
+          </div>
+        </div>
+        <!--.sub-block-->
+
+        <!--.sub-block-->
+      </div>
+    </div><!-- .block -->
+
+    <div class="block" id="geoluxmeter">
+      <h1 class="title">2.a Geoluxmeter</h1>
+      <div class="content-wrapper">
+        <div class="sub-block-70">
+
+          <div class="parallaxContainer" id="reduceImage">
+            <img src="source/para4/6.png" data-speed="3" >
+            <img src="source/para4/5.png" data-speed="2">
+            <img src="source/para4/4.png" data-speed="1">
+            <img src="source/para4/3.png" data-speed="0">
+            <img src="source/para4/2.png" data-speed="-20">
+            <img src="source/para4/1.png" data-speed="-30">
+          </div>
+
+        </div>
+        <!--.sub-block-->
+        <div class="sub-block-30 pushCenter animated rright selfClassChanger" data-classname="come-in">
+          <p>Geoluxmeter is a geolocated luxmeter. Everyone can make the device and then record a sampling of geolocated light points.
+            just pair it with your smartphone then to clip it on the handle of your bag or your cap.</p>
+          <div class="button"><a href="assemblage.zip">Download instructions</a></div>
+        </div>
+        <!--.sub-block-->
+      </div>
+
+      <div style="clear:both"></div>
+      <!--.content-wrapper-->
+    </div>
+    <!--.block-->
+
+    <div class="block" id="spam-box">
+      <h1 class="title">2.b Spam-box</h1>
+      <div class="content-wrapper">
+        <div class="sub-block-30 pushCenter animated lleft selfClassChanger" data-classname="come-in">
+          <p>They send one email per night with the lux level plus a notice explaining how you can reduce light pollution
+            you can attach them under streetlights and like the geoluxmeter they are also geolocated,
+            the gps position is translated into zipcode and then make a request for the municipality's email via ch.ch </p>
+
+          <div class="button"><a href="assemblage.zip">Download instructions</a></div>
+        </div>
+        <!--.sub-block-->
+        <div class="sub-block-70">
+
+          <div class="parallaxContainer">
+            <img src="source/para3/4.png" data-speed="2">
+            <img src="source/para3/5.png" data-speed="1">
+            <img src="source/para3/3.png" data-speed="0">
+            <img src="source/para3/2.png" data-speed="-10">
+            <img src="source/para3/1.png" data-speed="-20">
+
+          </div>
+
+        </div>
+        <!--.sub-block-->
+      </div>
+
+      <div style="clear:both"></div>
+      <!--.content-wrapper-->
+    </div>
+    <!--.block-->
+
+    <div class="block classChanger" data-classname="inverted" id="contribute">
+      <h1 class="title">3. Contribute</h1>
+      <div class="content-wrapper">
+        <div class="sub-block-70">
+          <div id="map"></div>
+        </div>
+        <!--.sub-block-->
+        <div class="sub-block-30">
+<div class="elem1">
+          <p>This map is not like those of satellite views, those of satellite views allow us to see the radiance of light in the sky in a global way.
+            Here we can see the direct repercussions on the street. The records are uploaded by every one with the geoluxmeter.
+            the levels are based on the clearest natural sky that we can have at 0.25lx we can see that sometimes we exceed 1000 times this value even more</p>
+            </div>
+            <div class="circle-container">
+              <span><div class="circle notifier"><img src="source/plan001g.png"></div> Position of street lighting notifiers</span><br>
+              <span><div class="circle grad1"></div> More than 1 lux</span><br>
+                <span><div class="circle grad2"></div> More than 50 lux</span><br>
+              <span><div class="circle grad3"></div> More than 100 lux</span><br>
+                <span><div class="circle grad4"></div> More than 500 lux</span>
+              </div>
+
+        </div>
+
+        <div style="clear:both"></div>
+        <!--.sub-block-->
+      </div>
+      <!--.content-wrapper-->
+    </div>
+    <!--.block-->
+  </div>
+  <!--page-->
+  <div id="photoframe">
+    <div></div>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRErmO6On3wu1-38p3uoPl-0F2w_qzgeE&libraries=visualization,places&callback=initMap"></script>
+  <script src="parallaxScript.js"></script>
+  <script src="layout.js"></script>
+</body>
+
+</html>
