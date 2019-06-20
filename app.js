@@ -6,46 +6,18 @@ var AT_TABLE_NAME = "Table%201";
 
 
 
-var client = mqtt.connect('mqtt://ecal-diplome:18099344aa075d12@broker.shiftr.io', {
-  clientId: 'javascript'
-});
 
-client.on('connect', function() {
-  console.log('client has connected!');
-});
-
-client.on('message', function(topic, message) {
-  console.log('new message:', topic, message.toString());
-  //  document.getElementById("message").innerHTML = '<span>lux: ' + + message.toString() + '</span><br/>';
-  document.getElementById("message").innerHTML = message.toString();
-
-});
 
 
 
 // document.getElementsByName("Thing")[0].addEventListener('change', doThing);
 
-//array pour le mail
-lel = [];
-
-client.subscribe('/esp2web');
-
-var int00;
 
 
 
 
-//   /* function */
-// function doThing(){
-//    console.log('value: ' + this.value);
-//    lel.push(this.value);
-//    int00 = setInterval(function() { repeatingfunction0(); }, 1000);
-// }
 
 
-function repeatingfunction0() {
-  client.publish('/web2esp', lel[lel.length - 1]);
-}
 
 
 
@@ -58,16 +30,20 @@ var icon2 = {
 };
 
 
+
 async function initMap() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var lng = parseFloat(urlParams.get('lng')) || 6.888697;
+
+  var lat = parseFloat(urlParams.get('lat')) || 46.989402;
   var peseux = {
-    lat: 46.989402,
-    lng: 6.888697
+    lat: lat,
+    lng: lng
+
   };
 
-
-
-
-
+console.log("lat "+lat);
+console.log("long"+lng);
 
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
@@ -244,8 +220,8 @@ jQuery(document).ready(function($) {
 
 // Multiple Markers
    var markers = [
-       ['Rue du Bourg', 46.989402, 6.888697],
-       ['Place du Kebab', 46.990102, 6.889697]
+       ['Chemin des Pavés, 2034 Peseux', 46.989402, 6.888697],
+       ['Chemin Gabriel, 2034 Peseux', 46.990102, 6.889697]
    ];
 
 
@@ -256,18 +232,21 @@ jQuery(document).ready(function($) {
     // Loop through our array of markers & place each one on the map
     for( i = 0; i < markers.length; i++ ) {
         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+
+        var placeName = markers[i][0] ;
         //bounds.extend(position);
         marker = new google.maps.Marker({
             position: position,
             map: map,
             icon: icon1,
             //title: markers[i][0],
-            title: 'place-' + ( i + 1 )
+            title: 'place-' + ( i + 1 )+"|"+placeName,
+            fontSize: "1.5eme"
         });
         google.maps.event.addListener(
                     marker,
                     "click",
-                     function (e) {
+                     function (i) {
                        // for(i = 1 ; i < 99 ; i++) {
                        //   var imgUrl = "'places/place-" + i + ".jpg'" ;
                        //  //$("[title='place-" + i + "']").on('click', function(e){
@@ -278,12 +257,13 @@ jQuery(document).ready(function($) {
                        //   // $('.photoframe').append(depth);
                        // //});
                        // }
-
-                       var getTitle = $(this).attr('title');
+                       var attr = $(this).attr('title')
+                       var getTitle = attr.split("|")[0];
+                       var getName = attr.split("|")[1];
                        //alert(getTitle);
                        var imgUrl = "'places/" + getTitle + ".jpg'" ;
-                       $('#photoframe').append('<img src=' + imgUrl + '>' );
-                       $('#photoframe').css({'z-index':'999'});
+                       $('#photoframe > div').append('<img src=' + imgUrl + '><div class ="photo-caption">' + getName + '</div>' );
+                       $('#photoframe').css({'z-index':'999', 'fontFamily':'GalanoGrotesque-Medium','fontSize': '1.5em'});
                        $('#photoframe , #photoframe img').animate({'opacity':'1'},400);
                    }
                 );
@@ -386,7 +366,7 @@ jQuery(document).ready(function($) {
   //'rgba(255, 210, 210, 1)',
 
   'rgba(255, 165, 0, 1)',
-  'rgba(205,51, 51, 1)',
+  'rgba(255,60, 0, 1)',
 
 ]
 
